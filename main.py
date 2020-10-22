@@ -1,7 +1,11 @@
-from Tag8 import a1
+from Tag9 import a1, a2, a3
 
-verlust = a1.daily_lost(a1.teilnehmeranzahl)
-npver = a1.extrapolate(a1.list_to_numb_array(verlust))
-a1.info(npver)
-data = a1.to_pd_DataFrame(a1.teilnehmeranzahl)
-a1.barchart(data)
+texta = "Hallo Beispielsatz!"
+textc = ".- .-.. .-..  -.-- --- ..- .-.  -... .- ... .  .- .-. .  -... . .-.. --- -. --.  - ---  ..- ..."
+texts = "SNXG VFG, QNFF NYYRF VZ HAVIREFHZ RAGJRQRE RVAR XNEGBSSRY VFG BQRE AVPUG"
+#print(a1.str_to_mc(texta))
+#print(a1.mc_to_str(textc))
+#for i in range(26):
+#	print(i)
+#	print(a2.caesar(texts, i, decrypt=True))
+a3.anagram_gen(input("Wort: "))

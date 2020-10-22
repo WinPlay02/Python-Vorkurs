@@ -23,7 +23,6 @@ def daily_lost(teilnehmeranzahl):
 def list_to_numb_array(verlust):
 	return np.array(verlust, dtype = 'float32')
 
-
 #c)
 def info(nparray):
 	print(f"Min: {np.amin(nparray)}")
@@ -41,10 +40,8 @@ def to_pd_DataFrame(teilnehmeranzahl):
 #e)
 def barchart(dataframe):
 	plt.style.use('seaborn-whitegrid')
-	# dataframe.T.plot(kind='bar', colors=colors)
-	plt.bar(dict(teilnehmeranzahl).keys(), dataframe["teilnehmer"], color=colors, label='index') # 
+	plt.bar(dict(teilnehmeranzahl).keys(), dataframe["teilnehmer"], color=colors, label='index')
 	plt.xticks(rotation='vertical')
-
 	plt.ylabel('Teilnehmeranzahl')
 	plt.title('Python Vorkurs')
 	plt.show()
@@ -56,3 +53,11 @@ def extrapolate(nparray):
 			teilnehmeranzahl[i] = (teilnehmeranzahl[i][0], teilnehmeranzahl[i-1][1] * (1.0-np.average(nparray)))
 			continue
 	return to_pd_DataFrame(teilnehmeranzahl)
+
+"""from Tag8 import a1
+
+verlust = a1.daily_lost(a1.teilnehmeranzahl)
+npver = a1.extrapolate(a1.list_to_numb_array(verlust))
+a1.info(npver)
+data = a1.to_pd_DataFrame(a1.teilnehmeranzahl)
+a1.barchart(data)"""
