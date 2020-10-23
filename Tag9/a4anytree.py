@@ -1,4 +1,5 @@
 from anytree import Node, RenderTree
+from anytree.exporter import DotExporter
 
 def main():
 	root = Node(15)
@@ -16,4 +17,5 @@ def main():
 	#print(RenderTree(root))
 	for pre, fill, node in RenderTree(root):
 		print("%s%s" % (pre, node.name))
-	pass
+	# DotExporter(root).to_picture('root.png')
+  
